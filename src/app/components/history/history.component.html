@@ -1,0 +1,35 @@
+<div class="overflow-x-auto border-2 border-gray-200 m-2 mt-5 w-2/3 mx-auto">
+    @if(tasks.length > 0){
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>create at</th>
+          <th>last update</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of tasks ; track item.title) {
+        <tr>
+          <td>{{ item._id.substr(0, 5) }}</td>
+          <td>{{ item.title }}</td>
+          <td>{{ item.description }}</td>
+          @if(item.done){
+            <td class="text-green-500">Done</td>
+          }
+          @if(!item.done){
+            <td class="text-yellow-500">In progess</td>
+          }
+          <td>{{item.createdAt}}</td>
+          <td>{{item.updatedAt}}</td>
+        }
+      </tbody>
+    </table>
+    } @if(tasks.length === 0){
+    <div class="text-center text-gray-500 text-xs italic py-5">No tasks found.</div>
+    }
+  </div>
+  

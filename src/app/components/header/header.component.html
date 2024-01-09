@@ -1,0 +1,33 @@
+<div class="bg-gray-100 py-4 font-black flex justify-between">
+  <p class="text-2xl uppercase">{{ headerTitle }}</p>
+  <div class="space-x-2 mx-1">
+    <a
+      [routerLink]="['/dashboard']"
+      type="button"
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded uppercase"
+    >
+      dashboard
+    </a>
+    <a
+      [routerLink]="['/history']"
+      type="button"
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded uppercase"
+    >
+      history
+    </a>
+    <a
+      [routerLink]="['/create']"
+      type="button"
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded uppercase"
+    >
+      create
+    </a>
+    <a
+      [routerLink]="['/about']"
+      type="button"
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded uppercase"
+    >
+      about
+    </a>
+  </div>
+</div>

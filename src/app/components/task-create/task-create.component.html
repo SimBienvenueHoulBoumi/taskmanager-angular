@@ -1,0 +1,50 @@
+<form (ngSubmit)="createTask(formData)" class="w-2/3 m-auto mt-5">
+  <div class="m-1">
+    @if(formData.title.length < 0) {
+    <p class="text-red-500 text-xs italic">Please enter a name.</p>
+    }
+    <label for="title" class="block text-sm font-medium leading-6 text-gray-900"
+      >Title</label
+    >
+    <div class="mt-2">
+      <input
+        id="title"
+        name="title"
+        type="text"
+        autocomplete="off"
+        required
+        [(ngModel)]="formData.title"
+        class="block w-full p-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+      />
+    </div>
+  </div>
+  <div class="m-1">
+    @if (formData.description.length < 0) {
+    <p class="text-red-500 text-xs italic">Please enter a description.</p>
+    }
+    <label
+      for="description"
+      class="block text-sm font-medium leading-6 text-gray-900"
+      >Description</label
+    >
+    <div class="mt-2">
+      <input
+        id="description"
+        name="description"
+        type="text"
+        autocomplete="off"
+        required
+        [(ngModel)]="formData.description"
+        class="block w-full p-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+      />
+    </div>
+    @if(formData.description.length > 0 && formData.title.length > 0) {
+    <button
+      type="submit"
+      class="uppercase my-2 px-8 py-2 bg-blue-300 hover:bg-blue-600 text-white rounded-md hover:cursor-pointer"
+    >
+      Create
+    </button>
+    }
+  </div>
+</form>
